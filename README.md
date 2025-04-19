@@ -15,6 +15,6 @@ Open the file gptreply/gpt_con.py and fill in your:
 python run_autopen.py --test-object http://localhost:3000 --test-goal "test vuln" --results-pattern-type rule --results-rule-pattern "test"
 ```
 
-##📦 Test Sets
+## 📦 Test Sets
 - All challenge tasks are included in the ctf_testsets directory, including AutoPenBench-ws 🧩
 - For CVE reproduction tasks, you can download corresponding Docker environments from Vulhub based on the CVE ID 🔧🐳
