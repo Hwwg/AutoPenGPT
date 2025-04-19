@@ -22,13 +22,8 @@ class GPTReply:
         while True:
             try:
                 if self.client == "openai":
-                    client = OpenAI(api_key="sk-zJGvkmuoGr2ai5gX7d4bEb6627304cC7851801F9483c8709", base_url="https://aigc.x-see.cn/v1")
-                elif self.client == "deepseek":
-                    client = OpenAI(api_key="sk-602bef791cc84a4ca9e6db6bf393029f", base_url="https://api.deepseek.com")
-                elif self.client == "qwq":
-                    client = OpenAI(api_key="sk-56dfa95a0b8846bf902934b0b5cec7fa", base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
-                elif self.client == "deepseek_back":
-                    client = OpenAI(api_key="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", base_url="https://openrouter.ai/api/v1")
+                    client = OpenAI(api_key="", base_url="")
+                #
 
 
 
