@@ -75,7 +75,11 @@ class AutoPenWorkFlow:
         }
         # self.initial_test_info_dict["historical_data_result"]
         self.file_cache_path = file_cache_path
-        self.action_execution = ActionExecution(self.file_cache_path)
+        self.action_execution = ActionExecution(self.file_cache_path,
+                                                self.token_length_judge(model),
+                                                self.initial_test_info_dict["test_object_initial_page_info"],
+                                                model
+                                                )
         self.log_file_path = log_file_path
         self.results_pattern_type = results_pattern_type
         self.stop_flag = stop_flag
@@ -83,6 +87,12 @@ class AutoPenWorkFlow:
             self.results_rule_pattern = results_rule_pattern
         log_dir = os.path.dirname(self.log_file_path)
         os.makedirs(log_dir, exist_ok=True)
+
+    def token_length_judge(self,model):
+        with open("config/token_length.json","r") as f:
+            data = json.loads(f)
+        return data["model"]
+
 
     def code_formatting(self, data):
         pattern = r'```python(.*?)```'
